@@ -45,11 +45,11 @@ const App = () => {
             return <Character key={character.id} character={character} />
           })}
         </div>
-        <button onClick={(event) => {
+        {page > 1 &&<button onClick={(event) => {
           if (page > 1) {
             setPage(page - 1)
           }
-        }}>Last Page</button>
+        }}>Last Page</button> }
         <button onClick={(event) => {
           if (page >= 1) {
             setPage(page + 1)
