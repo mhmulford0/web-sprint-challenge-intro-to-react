@@ -20,17 +20,17 @@ const StlyedApp = styled.div`
 
   button {
     box-shadow:inset 0px -3px 7px 0px #29bbff;
-	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
-	background-color:#2dabf9;
-	border-radius:3px;
-	border:1px solid #0b0e07;
-	display:inline-block;
-  cursor:pointer;
-  font-size:20px;
-	padding:9px 23px;
-	text-decoration:none;
-  text-shadow:0px 1px 0px #263666;
-  margin: 2rem 1rem;
+    background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    background-color:#2dabf9;
+    border-radius:3px;
+    border:1px solid #0b0e07;
+    display:inline-block;
+    cursor:pointer;
+    font-size:20px;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    margin: 2rem 1rem;
   }
 
   button:hover {
@@ -71,12 +71,14 @@ const App = () => {
         </div>
         {page > 1 && <button onClick={(event) => {
           if (page > 1) {
+            window.scrollTo(0, 0);
             setPage(page - 1)
           }
         }}>Last Page</button>}
         <button onClick={(event) => {
-          if (page >= 1) {
-            setPage(page + 1)
+          if (page >= 1 && page < 35) {
+            setPage(page + 1);
+            window.scrollTo(0, 0)
           }
         }}>Next Page</button>
       </StlyedApp>
